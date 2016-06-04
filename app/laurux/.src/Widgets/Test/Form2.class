@@ -1,0 +1,15 @@
+' Gambas class file
+
+
+Public Sub Form_Open()
+
+    Connections["OldLaurux"].Open
+  DBCombo21.Refresh
+
+End
+
+Public Sub DBCombo21_MouseDown()
+
+  
+
+End

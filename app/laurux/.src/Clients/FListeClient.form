@@ -1,0 +1,12 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,132,64)
+  Arrangement = Arrange.Fill
+  { DataList1 DataList
+    MoveScaled(6,8,118,50)
+    Columns = ["cli_code", "cli_nom", "cli_pnm", "cli_adr1", "cli_cd_ptl", "cli_ville"]
+    Labels = ["Code", "Nom", "Prénom", "Adresse", "CP", "Ville"]
+    Table = "Fiches_Cli"
+  }
+}

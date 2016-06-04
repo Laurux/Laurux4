@@ -1,0 +1,97 @@
+' Gambas class file
+
+Static Private $iType As Integer
+
+
+Static Public Sub Run(iType As Integer)
+  
+  $iType = iType
+  
+  Me.ShowDialog
+  
+End
+
+
+Public Sub IconPanel1_Click()
+  
+  SetFocusOnFirst(Last)
+
+End
+
+Public Sub Form_Open()
+Try Connections["OldLaurux"].Open
+DBCbCollectif.Refresh
+dbcEcheance.Refresh
+dbcTypecli.Refresh
+
+  Init
+  
+End
+
+
+Private Sub Init()
+
+  Dim s As String
+  'IconPanel1.Index = 1
+  For Each s In Split(File.Load("Pays.txt"), "\n")
+    cmbPays.Add(s)
+  Next
+  SetFocusOnFirst(IconPanel1)
+End
+
+
+
+Public Sub DBCbCollectif_MouseDown()
+
+  
+
+End
+
+Public Sub Status_MouseDown()
+
+  
+
+End
+
+Public Sub Panel32_MouseDown()
+
+  
+
+End
+
+Public Sub Frame6_MouseDown()
+
+  
+
+End
+
+Public Sub btnLeave_Click()
+
+  Me.Close
+
+End
+
+Private Sub SetFocusOnFirst(hContainer As Container) As Boolean
+
+  Dim hObj As Control
+  
+  For Each hObj In hContainer.Children
+    Select Case Object.Type(hObj)
+      Case "TextBox", "TextArea", "DataList", "DBCombo", "CheckBox"
+        hObj.SetFocus
+        Return True
+    End Select
+    If hObj Is Container Then 
+      If SetFocusOnFirst(hObj) Then Return True
+    Endif
+  Next
+  
+End
+
+
+
+Public Sub Form_Activate()
+
+  
+
+End

@@ -1,0 +1,12 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,64,64)
+  { DBCombo21 DBCombo2
+    MoveScaled(6,4,38,4)
+    Columns = ["compte_cc", "intitule_cc"]
+    Labels = ["Code", "Intitulé"]
+    ShowFilters = False
+    Table = "SELECT * FROM Fiches_Comptes where coll =1 and left(compte_cc,2) = 41 order by cast(compte_cc AS char)"
+  }
+}

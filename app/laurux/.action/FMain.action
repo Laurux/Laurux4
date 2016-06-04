@@ -1,0 +1,34 @@
+# Gambas Action File 3.0
+
+{ Actions
+  { Action leave
+    Text = ""
+    Picture = "2-porte.png"
+  }
+  { Action mnu-constantes
+    Text = "Constantes"
+    Picture = "$MenuButton"
+  }
+  { Action mnu-facturation
+    Text = "Facturation"
+    Picture = "$MenuButton"
+  }
+  { Action mnu-table
+    Text = "Tables"
+    Shortcut = ""
+    Picture = "$MenuButton"
+  }
+  { Action table-client
+    Text = ""
+    Picture = "preferences-contact-list.png"
+  }
+}
+
+{ Toolbars
+  { Toolbar general
+    Text = ""
+    List = "mnu-table,leave,table-client,mnu-facturation,mnu-constantes"
+    Default = "mnu-table,leave,table-client,mnu-facturation,mnu-constantes"
+  }
+}
+

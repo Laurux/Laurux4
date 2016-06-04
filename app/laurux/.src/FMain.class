@@ -1,0 +1,27 @@
+' Gambas class file
+
+
+Public Sub ToolBar1_Configure()
+
+  TabPanel1.Height = ToolBar1.Height + 35
+  'TabPanel1.
+  'TabPanel1.Refresh
+End
+
+Public Sub Form_Open()
+
+  Application.MainWindow = Me
+
+End
+
+Public Sub PictureBox1_MouseDown()
+
+  
+
+End
+
+Public Sub ToolButton2_Click()
+
+  FListeClient.Show
+
+End
