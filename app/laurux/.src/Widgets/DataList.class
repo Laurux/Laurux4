@@ -1,0 +1,467 @@
+' Gambas class file
+
+Export
+Inherits UserControl
+Public Const _Properties As String = "*,Border=True,Grid=True,Padding{Range:0;63}=2,Header{GridView.None;Horizontal;Vertical;Both}=Horizontal,Columns,Labels,ShowFilters=True,Table"
+Public Const _Group As String = "View"
+Public Const _DefaultEvent As String = "Click"
+Property Table As String
+Property Columns As String[]
+Property Labels As String[]
+Property ShowFilters As Boolean
+Property Header As Integer
+Property ValueField As String
+Property Read Value As Variant
+Property Read Grid As GridView
+Property Read Count As Integer
+Private $sTable As String
+Private $aColumns As New String[]
+Private $aLabels As New String[]
+Private $bShowFilters As Boolean = True
+
+Private $hGrid As GridView
+Private $sIntern As String
+Private $hResult As Result
+Private $aInternColumns As String[]
+Private $sValueField As String
+Private $hPan As Panel
+Private $hFilterGrid As TableView
+
+Private hHbox As HBox
+Private $aFilters As New String[][]
+Private $iCol As Integer
+Private $hObs As Observer
+Private $aAndOr As String[] = [" AND", " OR", " AND NOT", " OR NOT"]
+Private $aEtOu As String[] = ["Et", "Ou", "Et pas", "Ou pas"]
+Private $aCompare As String[] = ["contient", "commence par", "finit par", "=", ">=", ">", "<=", "<"]
+Event Activate
+Event Click
+Event MouseDown
+Event MouseUp
+Event Update
+
+Public Sub _new()
+  'Dim hHbox As HBox
+
+  $hPan = New Panel(Me)
+  hHbox = New HBox($hPan)
+  $hFilterGrid = New TableView(hHbox) As "FilterGrid"
+  $hFilterGrid.Expand = True
+
+  '$htbClean.Picture = Picture["img/22/edit_clear.png"]
+
+  $hPan.Arrangement = Arrange.Vertical
+  $hGrid = New GridView($hPan) As "Grid"
+  '$htbClean = New ToolButton($hPan) As "tbClean"
+  '$htbClean.Height = 32
+  $hGrid.Expand = True
+  $hGrid.Header = GridView.Horizontal
+  $hGrid.Mode = Select.Single
+  $hGrid.Rows.Height = 30
+  $hFilterGrid.ScrollBar = Scroll.None
+  $hFilterGrid.Columns.Count = 5
+  $hFilterGrid.Columns[0].Width = 60
+  $hFilterGrid.Columns[1].Width = 100
+  $hFilterGrid.Columns[2].Width = 130
+  $hFilterGrid.Columns[3].Expand = True
+  $hFilterGrid.Columns[4].Width = 30
+  hHbox.Height = 0
+  '$hFilterGrid.Rows.Count = 1
+  $hFilterGrid.Rows.Height = 30
+
+  'hHbox.Height = $hFilterGrid.Rows.Height + 2
+  '$htbClean.W = hHbox.H
+  $hFilterGrid.Grid = False
+  'If $sTable Then Me.Table = $sTable
+
+End
+
+Private Function Columns_Read() As String[]
+
+  Return $aColumns
+
+End
+
+Private Sub Columns_Write(Value As String[])
+  'Print "Columns"
+
+  $aColumns = Value
+  If $sTable Then Me.Table = $sTable
+
+End
+
+Private Function Labels_Read() As String[]
+
+  Return $aLabels
+
+End
+
+Private Sub Labels_Write(Value As String[])
+  'Print "Labels"
+
+  $aLabels = Value
+  If $sTable Then Me.Table = $sTable
+
+End
+
+Private Function ShowFilters_Read() As Boolean
+
+  Return $bShowFilters
+
+End
+
+Private Sub ShowFilters_Write(Value As Boolean)
+
+  If Not Value Then
+    $aFilters.Clear
+    MakeFilter
+  Endif
+  hHbox.Visible = Value
+  $bShowFilters = Value
+
+End
+
+Private Function Table_Read() As String
+
+  Return $sTable
+
+End
+
+Private Sub Table_Write(Value As String)
+
+  Dim hField As ResultField
+  Dim i As Integer
+  'Print "Table"
+  $sTable = Value
+  $aInternColumns = New String[]
+  $sIntern = ""
+  If Split($sTable, " ").Count = 1 Then
+    $sIntern = "SELECT * FROM " & $sTable
+    Try $hResult = db.Find($sTable)
+
+  Else
+    $sIntern = $sTable
+    Try $hResult = db.Exec($sTable)
+
+  Endif
+  If Not $hResult Then Return
+
+  If $aColumns And If $aColumns.Count > 0 Then
+    $hGrid.Columns.Count = $aColumns.Count
+    '$hFilterGrid.Columns.Count = $aColumns.Count
+    $aInternColumns = $aColumns.Copy()
+  Else
+
+    $hGrid.Columns.Count = $hResult.Fields.Count
+    '$hFilterGrid.Columns.Count = $hResult.Fields.Count
+    $aInternColumns = New String[]
+    For Each hField In $hResult.Fields
+
+      $hGrid.Columns.Width = -1
+      $hGrid.Columns[i].Expand = True
+      $hGrid.columns[i].Text = hField.Name
+      $aInternColumns.Add(hField.Name)
+      Inc i
+    Next
+  Endif
+  If $aLabels Then
+
+    For i = 0 To $aLabels.Max
+      Try $hGrid.Columns[i].Text = $aLabels[i]
+    Next
+  Endif
+
+  If Not $aInternColumns.Exist($sValueField) Then
+    $sValueField = $aInternColumns[0]
+  Endif
+
+  '$hGrid.Header = GridView.Horizontal
+
+  $hGrid.Rows.Count = $hResult.Count
+  $hFilterGrid.Rows.Count = 0
+  'FilterAddRow
+  Raise Update
+End
+
+Public Sub grid_Click()
+
+  Raise Click
+
+End
+
+Public Sub grid_Data(Row As Integer, Column As Integer)
+
+  Dim iw As Integer
+
+  $hResult.MoveTo(Row)
+
+  iw = Len(Str($hResult[$aInternColumns[Column]])) * Me.Font.TextWidth("o")
+  If Column < Last.columns.Max Then
+    If Last.Columns[Column].Width < iw Then Last.columns[Column].WIdth = iw
+  Endif
+  'If Column = Last.columns.Max Then Last.Columns[Column].WIdth = -1
+  Last.Data.Text = $hResult[$aInternColumns[Column]]
+
+  If (Row Mod 2) = 1 Then Last.Data.Background = Color.SetAlpha(Color.Green, 225)
+
+End
+
+Private Function Header_Read() As Integer
+
+  Return $hGrid.Header
+
+End
+
+Private Sub Header_Write(Value As Integer)
+
+  $hGrid.Header = Value
+  $hGrid.Refresh
+
+End
+
+Public Sub FilterGrid_Draw(X As Integer, Y As Integer, Width As Integer, Height As Integer, Row As Integer, Column As Integer)
+
+  If Not $hFilterGrid.Rows.Border Then
+    $hFilterGrid.Rows.Border = New Border
+    $hFilterGrid.Rows.Border.Style = Border.Solid
+    $hFilterGrid.Rows.Border.Radius = 2
+    $hFilterGrid.Rows.Border.Color = Color.gray
+    $hFilterGrid.Rows.Border.Margin = 2
+  Endif
+  Select Case Column
+    Case 4
+      Draw.Picture(Picture["img/22/remove.png"], x, y, 22, 22)
+  End Select
+
+End
+
+' Public Sub FilterGrid_Data(Row As Integer, Column As Integer)
+'
+'   If Column < 4 Then
+'     Last.Data.Background = Color.green
+'   Endif
+'
+' End
+Public Sub FilterGrid_MouseDown()
+
+  Dim hEdit As TextBox
+
+  Select Case $hFilterGrid.Column
+    Case 0
+      $hFilterGrid.Edit($aEtOu, True)
+    Case 1
+      $hFilterGrid.Edit(GetColumnNames(), True)
+    Case 2
+      $hFilterGrid.Edit($aCompare, True)
+    Case 3
+      $hFilterGrid.Edit()
+      If Not $hObs Then $hObs = New Observer($hFilterGrid.Editor) As "TextEdit"
+      hEdit = $hFilterGrid.Editor
+      hEdit.Parent.top += 2
+      hEdit.Parent.Height -= 4
+      hEdit.Background = Color.Green
+    Case 4
+      $aFilters.Remove($hFilterGrid.Row)
+      $hFilterGrid.Rows.Count = $aFilters.Count
+      hHbox.Height = $hFilterGrid.Rows.Count * $hFilterGrid.Rows.Height + 2
+      $hFilterGrid.Refresh
+      MakeFilter
+
+  End Select
+
+End
+
+Private Function GetColumnNames() As String[]
+
+  Dim aNames As New String[]
+  Dim i As Integer
+
+  For i = 0 To $hGrid.Columns.Count - 1
+    aNames.Add($hGrid.Columns[i].Text)
+  Next
+  Return aNames
+
+End
+
+Public Sub FilterGrid_Save(Row As Integer, Column As Integer, Value As String)
+
+  $aFilters[Row][Column] = Value
+  $hFilterGrid.Refresh
+
+End
+
+Public Sub FilterGrid_Data(Row As Integer, Column As Integer)
+
+  Last.Data.BackGround = Color.Green
+  If Column < 4 Then
+    Last.Data.Text = $aFilters[Row][Column]
+  Endif
+
+End
+
+Private Sub FilterAddRow()
+
+  Dim i As Integer
+  Dim aBase As New String[]
+  Dim aFilter As New String[4]
+  Dim hEdit As TextBox
+
+  If $aFilters.Count = 10 Then Return
+  Print $hGrid.Column
+  aBase = ["Et", $hGrid.Columns[$iCol].Text, "contient"]
+  $aFilters.Add(aFilter)
+  For i = 0 To 2
+    $aFilters[$aFilters.Max][i] = aBase[i]
+  Next
+  $hFilterGrid.Rows.Count = $aFilters.Count
+  $hFilterGrid.Row = $hFilterGrid.Rows.Max
+  $hFilterGrid.Column = 3
+  hHbox.Height = $hFilterGrid.Rows.Height * $hFilterGrid.Rows.Count + 2
+  $hFilterGrid.Edit()
+  If Not $hObs Then $hObs = New Observer($hFilterGrid.Editor) As "TextEdit"
+  hEdit = $hFilterGrid.Editor
+  hEdit.Parent.top += 2
+  hEdit.Parent.Height -= 4
+  hEdit.Background = Color.Green
+
+End
+
+Public Sub tbClean_Click()
+
+  FilterAddRow
+
+End
+
+Public Sub grid_DblClick()
+
+  If Mouse.y <= $hGrid.Rows.H Then
+    If $bShowFilters Then FilterAddRow()
+  Else
+    Raise Activate
+  Endif
+
+End
+
+Public Sub FilterRemove(iRow As Integer)
+
+  Dim i As Integer
+
+  For i = iRow To $hFilterGrid.Rows.Max - 1
+
+  Next
+
+End
+
+Public Sub grid_ColumnClick(Column As Integer)
+
+  $iCol = Column
+
+End
+
+Public Sub TextEdit_KeyRelease()
+
+  $aFilters[$hFilterGrid.row][$hFilterGrid.Column] = Last.Text
+  MakeFilter
+
+End
+
+Public Sub TextEdit_LostFocus()
+
+  Last.Parent.Hide
+
+End
+
+Private Sub MakeFilter()
+
+  Dim aFilter As String[]
+  Dim bFirst As Boolean = True
+  Dim sFilter As String
+  Dim sPrev As String
+  Dim i As Integer
+  For Each aFilter In $aFilters
+    If aFilter[3] = "" Then Continue
+      i = $aEtOu.Find(aFilter[0])
+    If Not bFirst Then 
+      sFilter &= $aAndOr[i]
+    Else
+      If i > 1 Then sFilter &= " NOT"
+    Endif
+    
+    bFirst = False
+    If $aLabels.Find(aFilter[1]) > -1 Then
+      sFilter &= " " & $aInternColumns[$aLabels.Find(aFilter[1])]
+    Else
+      sFilter &= " " & aFilter[1]
+    Endif
+    sPrev = aFilter[2]
+    
+    Select Case sPrev
+      Case "contient"
+        sFilter &= " LIKE '%" & aFilter[3] & "%'"
+      Case "finit par"
+        sFilter &= " LIKE '%" & aFilter[3] & "'"
+      Case "commence par"
+        sFilter &= " LIKE '" & aFilter[3] & "%'"
+      Default
+        sFilter &= " " & aFilter[3]
+    End Select
+  
+
+  Next
+  'Print $sIntern & " WHERE" & sFilter
+  Try $hResult = db.Exec($sIntern & IIf(Trim(sFilter), " WHERE" & sFilter, ""))
+  If Error Then Return
+  $hGrid.Rows.Count = $hResult.Count
+  $hGrid.Refresh
+  Raise Update
+
+End
+
+Public Sub Grid_MouseDown()
+
+  Raise MouseDown
+
+End
+
+Public Sub Grid_MouseUp()
+
+  Raise MouseUp
+
+End
+
+Public Sub Refresh()
+
+  If $sTable Then Me.Table = $sTable
+
+End
+
+Private Function ValueField_Read() As String
+
+  Return $sValueField
+
+End
+
+Private Sub ValueField_Write(Value As String)
+
+  $sValueField = Value
+
+End
+
+Private Function Value_Read() As Variant
+
+  $hResult.MoveTo($hGrid.Row)
+  Try Return $hResult[$sValueField]
+
+End
+
+Private Function Grid_Read() As GridView
+
+  Return $hGrid
+
+End
+
+Private Function Count_Read() As Integer
+
+  Return $hGrid.Rows.Count
+
+End

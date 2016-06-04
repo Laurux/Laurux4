@@ -1,0 +1,54 @@
+' Gambas module file
+
+Private $hCon As New Connection
+
+
+Public Sub Main()
+  
+  
+  
+End
+
+Public Function ResultToQuery(hResult As Result) As TDB[]
+  
+  Dim hField As New ResultField
+  Dim aTDB As New TDB[]
+  For Each hField In hResult
+    aTDB.Add(TDB(hField.Name, "", hField.Type, hResult[hField.Name]))
+    
+  Next
+  
+End
+
+
+Public Sub ConnectDB()
+  
+  
+  With $hCon
+    .Name = Settings["Database/Base", "Laurux01"]
+    .User = Settings["Database/User", "Root"]
+    .Password = Settings["Database/Password", ""]
+    .Type = Settings["Database/Type", "mysql"]
+    .Host = Settings["Database/Host", ""]
+    
+  End With
+  
+  
+  
+End
+
+
+
+
+Public Sub CloseDB()
+  
+  
+  
+End
+
+Public Function DB() As Connection
+  
+  Return $hCon
+  
+End
+

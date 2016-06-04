@@ -1,0 +1,163 @@
+' Gambas class file
+
+Export
+Inherits UserControl
+Public Const _Properties As String = "*,Border=True,Grid=True,Padding{Range:0;63}=2,Header,Columns,Labels,ShowFilters=true,Table,ValueField"
+
+Private hForm As New Form
+Private hTable As DataList
+Private hPan As HBox
+Private hText As TextBox
+Private hBut As Button
+Property Columns As String[]
+Property Labels As String[]
+Property ValueField As String
+
+Property Value As Variant
+Property ShowFilters As Boolean
+Property Table As String
+Property Header As Boolean
+
+
+
+Private $vValue As Variant
+
+
+
+
+
+
+
+
+Public Sub _new()
+
+  hForm = New Form
+  hTable = New DataList(hForm) As "Grid"
+  'hTable.Mode = Select.Single
+  hForm.Visible = False
+  hForm.Arrangement = Arrange.Fill
+  hForm.Persistent = True
+  hPan = New HBox(Me) As "Pan"
+  hText = New TextBox(hPan) As "TextBox"
+  hText.Expand = True
+  hBut = New Button(hPan) As "Button"
+  hBut.Width = hPan.Height
+  hBut.Picture = Picture["icon:/22/menu"]
+  hTable.ShowFilters = True
+  Me.Header = False
+
+End
+
+Public Sub Button_Click()
+
+  hForm.Resize(Me.W / 2 * 3, Me.H * 8)
+  hForm.ShowPopup(Me.ScreenX, Me.screenY + Me.Height)
+
+End
+
+Public Sub Pan_BeforeArrange()
+
+  hBut.Width = hPan.Height
+
+End
+
+Private Function Columns_Read() As String[]
+
+  Return hTable.Columns
+
+End
+
+Private Sub Columns_Write(Value As String[])
+
+  hTable.Columns = Value
+
+End
+
+Private Function Labels_Read() As String[]
+
+  Return hTable.Labels
+
+End
+
+Private Sub Labels_Write(Value As String[])
+
+  hTable.Labels = Value
+
+End
+
+Private Function Table_Read() As String
+
+  Return hTable.Table
+
+End
+
+Private Sub Table_Write(Value As String)
+
+  hTable.Table = Value
+
+End
+
+Private Function ValueField_Read() As String
+
+  Return hTable.ValueField
+
+End
+
+Private Sub ValueField_Write(Value As String)
+
+  hTable.ValueField = Value
+
+End
+
+Private Function Value_Read() As Variant
+
+  Return $vValue
+
+End
+
+Private Sub Value_Write(Value As Variant)
+
+  $vValue = Value
+
+End
+
+Public Sub grid_Click()
+  ' $hResult.MoveTo(hTable.Row)
+  ' Try $vValue = $hResult[$sValueField]
+  ' hText.Text = $vValue
+
+  $vValue = hTable.Value
+  hText.Text = $vValue
+  hText.SetFocus
+  hForm.Hide
+End
+
+Private Function Header_Read() As Boolean
+
+  Return hTable.Header = GridView.Horizontal
+
+End
+
+Private Sub Header_Write(Value As Boolean)
+
+  hTable.Header = IIf(Value, GridView.Horizontal, GridView.none)
+
+End
+
+Private Function ShowFilters_Read() As Boolean
+
+  Return hTable.ShowFilters
+
+End
+
+Private Sub ShowFilters_Write(Value As Boolean)
+
+  hTable.ShowFilters = Value
+
+End
+
+Public Sub Refresh()
+
+  hTable.Refresh
+
+End

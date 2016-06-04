@@ -1,0 +1,10 @@
+[Connection]
+Type="mysql"
+User="root"
+RememberPassword=False
+IgnoreCharset=False
+DisplayMetadata=False
+RememberTemplate=False
+Database="LauruxNew"
+Requests=[""]
+

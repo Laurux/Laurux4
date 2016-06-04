@@ -1,0 +1,22 @@
+' Gambas class file
+
+
+Public Sub Form_Open()
+  Try Connections["OldLaurux"].Open
+  DataList1.Refresh
+  'DataList1.Labels = ["Code", "Nom", "Prénom", "Adresse1", "CP", "Ville"]
+  'DataList1.Columns = ["cli_code", "cli_nom", "cli_pnm", "cli_adr1", "cli_cd_ptl", "cli_ville"]
+  'DataList1.Table = "Fiches_Cli"
+End
+
+Public Sub DataList1_DblClick()
+
+  
+
+End
+
+Public Sub DataList1_Activate()
+
+  FContact.Show
+
+End

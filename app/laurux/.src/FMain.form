@@ -1,0 +1,1017 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,138,65)
+  Arrangement = Arrange.Vertical
+  Margin = True
+  { Menu19 Menu
+    Text = Shortcut(("Paramètres"), "P")
+    Visible = False
+    { Menu26 Menu
+      Text = Shortcut(("Sociétés"), "S")
+    }
+    { Menu25 Menu
+      Text = Shortcut(("Paramètres généraux"), "P")
+    }
+    { Menu110 Menu
+      Text = Shortcut(("Préférences"), "r")
+    }
+    { Menu153 Menu
+      Text = Shortcut(("Couleurs"), "C")
+      Picture = Picture["icon:/small/color"]
+    }
+    { Menu173 Menu
+      Text = Shortcut(("Maj version"), "M")
+      Picture = Picture["icon:/16/replace"]
+    }
+    { Menu118 Menu
+      Text = Shortcut(("Quitter"), "Q")
+    }
+    { Menu120 Menu
+    }
+  }
+  { Menu66 Menu
+    Text = Shortcut(("Gestion"), "G")
+    Visible = False
+    { Menu69 Menu
+      Text = Shortcut(("Constantes"), "C")
+      { Menu112 Menu
+        Text = Shortcut(("TVA sur ventes"), "T")
+      }
+      { Menu17 Menu
+        Text = Shortcut(("Commentaires"), "o")
+      }
+      { Menu14 Menu
+        Text = Shortcut(("Familles"), "F")
+      }
+      { Menu28 Menu
+        Text = Shortcut(("Taux de main d'oeuvre"), "d")
+      }
+      { Menu130 Menu
+        Text = Shortcut(("Texte bas de facture"), "b")
+      }
+      { Menu199 Menu
+        Text = Shortcut(("Texte de \"Réserve de propriété\""), "R")
+      }
+      { Menu255 Menu
+        Text = Shortcut(("Texte associé aux courriels facturation"), "u")
+      }
+      { Menu315 Menu
+        Text = ("Textes SMS")
+      }
+      { Menu195 Menu
+        Text = Shortcut(("Civilités"), "C")
+      }
+      { Menu149 Menu
+        Text = Shortcut(("Types client"), "y")
+      }
+      { Menu219 Menu
+        Text = Shortcut(("Statuts clients"), "S")
+      }
+      { Menu165 Menu
+        Text = Shortcut(("Types étiquettes"), "é")
+      }
+      { Menu189 Menu
+        Text = Shortcut(("Codes postaux"), "p")
+      }
+      { Menu191 Menu
+        Text = Shortcut(("Marques"), "M")
+        Picture = Picture["icon:/32/bookmark"]
+      }
+      { Menu241 Menu
+        Text = Shortcut(("Centrales"), "n")
+      }
+    }
+    { Menu39 Menu
+    }
+    { mnutable Menu
+      Action = "mnu-table"
+      Text = Shortcut(("Tables"), "T")
+      { Menu12 Menu
+        Text = Shortcut(("Client"), "C")
+      }
+      { Menu13 Menu
+        Text = Shortcut(("Fournisseur"), "F")
+      }
+      { Menu15 Menu
+        Text = Shortcut(("Articles"), "A")
+        Picture = Picture["icon:/32/game"]
+      }
+      { Menu190 Menu
+        Text = Shortcut(("Matériels"), "M")
+        Picture = Picture["icon:/32/system"]
+      }
+      { Menu37 Menu
+        Text = Shortcut(("Main d'oeuvre"), "d")
+        Picture = Picture["icon:/32/tools"]
+      }
+      { Menu287 Menu
+        Text = Shortcut(("Vendeurs"), "V")
+      }
+      { Menu312 Menu
+        Text = Shortcut(("Commerciaux"), "x")
+      }
+      { Menu226 Menu
+        Text = Shortcut(("Remises client par famille"), "p")
+        Picture = Picture["icon:/32/text-right"]
+      }
+      { Menu154 Menu
+        Text = Shortcut(("Remises par type client"), "R")
+        Picture = Picture["icon:/32/unindent"]
+      }
+      { Menu277 Menu
+        Text = Shortcut(("Tarif par client"), "T")
+      }
+      { Menu278 Menu
+        Text = Shortcut(("Tarif par type client"), "y")
+      }
+      { Menu288 Menu
+        Text = Shortcut(("Coeff de vente par type client"), "f")
+      }
+      { Menu227 Menu
+        Text = Shortcut(("Produits composés"), "o")
+        Picture = Picture["icon:/32/network"]
+      }
+    }
+    { Menu18 Menu
+    }
+    { Menu192 Menu
+      Text = Shortcut(("Facturation"), "F")
+      { Menu42 Menu
+        Text = Shortcut(("Saisie des documents"), "S")
+      }
+      { Menu193 Menu
+        Text = Shortcut(("Saisie des factures entretien"), "d")
+      }
+      { Menu138 Menu
+        Text = Shortcut(("Factures fin de mois"), "F")
+        Picture = Picture["icon:/small/properties"]
+      }
+      { Menu299 Menu
+        Text = Shortcut(("Facturation périodique"), "r")
+      }
+      { Menu306 Menu
+        Text = Shortcut(("Regroupement des BL"), "g")
+      }
+      { Menu194 Menu
+        Text = Shortcut(("Bordereaux des réglements"), "B")
+      }
+      { Menu265 Menu
+        Text = Shortcut(("Liste des traites"), "t")
+      }
+      { Menu254 Menu
+        Text = Shortcut(("Liste des documents en cours"), "L")
+      }
+      { Menu106 Menu
+      }
+      { Menu72 Menu
+        Text = Shortcut(("Archives"), "A")
+        Picture = Picture["icon:/small/archive"]
+      }
+    }
+    { Menu307 Menu
+    }
+    { Menu308 Menu
+      Text = Shortcut(("GED"), "G")
+      { Menu309 Menu
+        Text = Shortcut(("Acquisition"), "A")
+      }
+      { Menu310 Menu
+        Text = Shortcut(("Recherche"), "R")
+      }
+    }
+    { Menu44 Menu
+    }
+    { Menu220 Menu
+      Text = Shortcut(("Promotions"), "P")
+      { Menu221 Menu
+        Text = Shortcut(("Tables des promotions"), "T")
+      }
+      { Menu222 Menu
+        Text = Shortcut(("Articles en promotion"), "A")
+      }
+      { Menu223 Menu
+        Text = Shortcut(("Statistiques promotions"), "S")
+      }
+      { Menu225 Menu
+        Text = Shortcut(("Etiquettes promotion"), "E")
+      }
+    }
+    { Menu224 Menu
+    }
+    { Menu47 Menu
+      Text = Shortcut(("Impression des tables"), "I")
+      { Menu53 Menu
+        Text = Shortcut(("Tarif"), "T")
+        { Menu73 Menu
+          Text = Shortcut(("Interne"), "I")
+        }
+        { Menu74 Menu
+          Text = Shortcut(("Client"), "C")
+        }
+        { Menu297 Menu
+          Text = ("\"Type client (coeff\"T\")")
+        }
+      }
+      { Menu54 Menu
+        Text = Shortcut(("Familles"), "F")
+      }
+      { Menu59 Menu
+        Text = Shortcut(("Main d'oeuvre"), "M")
+      }
+      { Menu101 Menu
+        Text = Shortcut(("Clients"), "C")
+      }
+      { Menu108 Menu
+        Text = Shortcut(("Fournisseurs"), "o")
+      }
+      { Menu289 Menu
+        Text = Shortcut(("Matériels"), "r")
+      }
+      { Menu160 Menu
+        Text = Shortcut(("Etiquettes"), "q")
+        { Menu161 Menu
+          Text = Shortcut(("Articles"), "A")
+        }
+        { Menu162 Menu
+          Text = Shortcut(("Gondole"), "G")
+        }
+        { Menu163 Menu
+          Text = Shortcut(("Clients"), "C")
+        }
+        { Menu302 Menu
+          Text = Shortcut(("Casier"), "s")
+        }
+      }
+    }
+    { Menu71 Menu
+    }
+    { Menu77 Menu
+      Text = Shortcut(("Stock"), "S")
+      { Menu88 Menu
+        Text = Shortcut(("Commande fournisseur"), "C")
+      }
+      { Menu78 Menu
+        Text = Shortcut(("Réception manuelle"), "R")
+      }
+      { Menu89 Menu
+        Text = Shortcut(("Réception automatique"), "a")
+      }
+      { Menu301 Menu
+        Text = Shortcut(("Modification des réceptions"), "M")
+      }
+      { Menu295 Menu
+        Text = Shortcut(("Validation des réceptions"), "V")
+      }
+      { Menu253 Menu
+        Text = Shortcut(("Impression des produits a commander"), "I")
+      }
+      { Menu228 Menu
+      }
+      { Menu79 Menu
+        Text = Shortcut(("Régularisation"), "g")
+      }
+      { Menu229 Menu
+        Text = Shortcut(("Effacement des mouvements"), "v")
+      }
+      { Menu159 Menu
+      }
+      { Menu267 Menu
+        Text = Shortcut(("Dépôts"), "D")
+        { Menu268 Menu
+          Text = Shortcut(("Table des dépôts"), "T")
+        }
+        { Menu269 Menu
+          Text = Shortcut(("Transfert dépôts"), "r")
+        }
+        { Menu270 Menu
+          Text = Shortcut(("Sorties manuelles"), "S")
+        }
+        { Menu271 Menu
+          Text = Shortcut(("Impressions"), "I")
+          { Menu272 Menu
+            Text = Shortcut(("Impression stock dépôts"), "I")
+          }
+          { Menu273 Menu
+            Text = Shortcut(("Impression des mouvements"), "m")
+          }
+        }
+      }
+      { Menu274 Menu
+      }
+      { Menu230 Menu
+        Text = Shortcut(("Entrées des produits composés"), "o")
+      }
+      { Menu231 Menu
+      }
+      { Menu156 Menu
+        Text = Shortcut(("Etiquettes"), "E")
+        { Menu157 Menu
+          Text = Shortcut(("Etiquettes articles"), "a")
+        }
+        { Menu158 Menu
+          Text = Shortcut(("Etiquettes gondole"), "g")
+        }
+        { Menu164 Menu
+          Text = Shortcut(("Etiquettes préparées"), "p")
+        }
+        { Menu242 Menu
+          Text = Shortcut(("Etiquettes future base tarif"), "f")
+        }
+      }
+      { Menu137 Menu
+      }
+      { Menu94 Menu
+        Text = Shortcut(("Inventaire tournant"), "t")
+        { Menu95 Menu
+          Text = Shortcut(("Génération"), "G")
+        }
+        { Menu96 Menu
+          Text = Shortcut(("Saisie"), "S")
+        }
+        { Menu98 Menu
+          Text = Shortcut(("Impression  des écarts"), "I")
+        }
+        { Menu97 Menu
+          Text = Shortcut(("Impression  des non saisis"), "n")
+        }
+        { Menu99 Menu
+          Text = Shortcut(("Impression de l'inventaire tournant"), "t")
+        }
+        { Menu100 Menu
+          Text = Shortcut(("Validation de l'inventaire tournant"), "V")
+        }
+        { Menu233 Menu
+          Text = Shortcut(("Suppression de l'inventaire"), "p")
+        }
+      }
+      { Menu80 Menu
+        Text = Shortcut(("Inventaire de fin d'exercice"), "f")
+        { Menu81 Menu
+          Text = Shortcut(("Génération"), "G")
+        }
+        { Menu82 Menu
+          Text = Shortcut(("Saisie"), "S")
+        }
+        { Menu83 Menu
+          Text = Shortcut(("Impression des écarts"), "I")
+        }
+        { Menu93 Menu
+          Text = Shortcut(("Impression  des non saisis"), "n")
+        }
+        { Menu85 Menu
+          Text = Shortcut(("Impression  de l'inventaire"), "d")
+        }
+        { Menu84 Menu
+          Text = Shortcut(("Validation de l'inventaire"), "V")
+        }
+        { Menu232 Menu
+          Text = Shortcut(("Suppression de l'inventaire"), "p")
+        }
+      }
+      { Menu139 Menu
+      }
+      { Menu86 Menu
+        Text = Shortcut(("Impressions"), "p")
+        { Menu92 Menu
+          Text = Shortcut(("Commandes fournisseurs"), "C")
+        }
+        { Menu90 Menu
+          Text = Shortcut(("Bons de réception"), "B")
+        }
+        { Menu91 Menu
+          Text = Shortcut(("Régularisations"), "R")
+        }
+        { Menu264 Menu
+          Text = Shortcut(("Entrées des produits composés"), "E")
+        }
+        { Menu102 Menu
+          Text = Shortcut(("Stock"), "S")
+        }
+      }
+      { Menu140 Menu
+      }
+      { Menu234 Menu
+        Text = Shortcut(("Suppression des articles"), "S")
+      }
+      { Menu235 Menu
+      }
+      { Menu243 Menu
+        Text = Shortcut(("Tarif"), "f")
+        { Menu186 Menu
+          Text = Shortcut(("Import et Maj articles"), "I")
+        }
+        { Menu244 Menu
+          Text = Shortcut(("Future base tarif"), "F")
+          { Menu246 Menu
+            Text = Shortcut(("Maj future base tarif"), "M")
+          }
+          { Menu247 Menu
+            Text = Shortcut(("Etiquettes future base tarif"), "E")
+          }
+        }
+        { Menu248 Menu
+          Text = Shortcut(("Maj Tarif en %"), "T")
+        }
+        { Menu249 Menu
+          Text = Shortcut(("Maj tarif manuelle"), "M")
+        }
+        { Menu245 Menu
+          Text = Shortcut(("Table des fichiers d'import"), "d")
+        }
+      }
+      { Menu276 Menu
+      }
+      { Menu275 Menu
+        Text = Shortcut(("Mise à jour code casier"), "M")
+      }
+    }
+    { Menu87 Menu
+    }
+    { Menu104 Menu
+      Text = Shortcut(("Statistiques"), "q")
+      { Menu251 Menu
+        Text = ("Tableau de bord")
+      }
+      { Menu107 Menu
+        Text = Shortcut(("Statistiques familles"), "f")
+      }
+      { Menu116 Menu
+        Text = Shortcut(("Chiffre d'affaire clients"), "C")
+      }
+      { Menu176 Menu
+        Text = Shortcut(("Chiffre d'affaire type client"), "t")
+      }
+      { Menu313 Menu
+        Text = Shortcut(("CA clients/commerciaux"), "x")
+      }
+      { Menu314 Menu
+        Text = Shortcut(("CA articles/commerciaux"), "C")
+      }
+      { Menu117 Menu
+        Text = Shortcut(("Chiffre d'affaire produits-Mo par client"), "p")
+      }
+      { Menu155 Menu
+        Text = Shortcut(("Chiffre d'affaire totalisé"), "t")
+      }
+      { Menu105 Menu
+        Text = Shortcut(("Hit parade des ventes"), "H")
+      }
+      { Menu142 Menu
+        Text = Shortcut(("Qté articles vendus pour une période"), "a")
+      }
+      { Menu143 Menu
+        Text = Shortcut(("Qté MO vendues pour une période"), "M")
+      }
+      { Menu169 Menu
+        Text = Shortcut(("Chiffre d'affaire fournisseur"), "d")
+      }
+      { Menu196 Menu
+        Text = Shortcut(("Relevé MO par client"), "R")
+      }
+      { Menu197 Menu
+        Text = Shortcut(("Recapitulatif MO-produit par client"), "u")
+      }
+      { Menu250 Menu
+        Text = ("Statistiques utilisation base Laurux")
+      }
+    }
+    { Menu257 Menu
+    }
+    { Menu258 Menu
+      Text = Shortcut(("Epurations"), "u")
+      { Menu259 Menu
+        Text = Shortcut(("Epuration des factures archivées"), "f")
+      }
+      { Menu260 Menu
+        Text = Shortcut(("Epuration des tickets de caisse"), "t")
+      }
+      { Menu261 Menu
+        Text = Shortcut(("Epuration des BL fournisseurs"), "B")
+      }
+      { Menu290 Menu
+        Text = Shortcut(("Epuration des devis"), "d")
+      }
+      { Menu296 Menu
+        Text = Shortcut(("Epuration des clients divers caisses"), "c")
+      }
+    }
+    { Menu68 Menu
+    }
+    { Menu144 Menu
+      Text = Shortcut(("Outils"), "O")
+      { Menu145 Menu
+        Text = Shortcut(("Changement famille"), "C")
+      }
+      { Menu305 Menu
+        Text = Shortcut(("Changement fournisseur"), "g")
+      }
+      { Menu168 Menu
+        Text = Shortcut(("Recalcul des stocks"), "R")
+      }
+      { Menu187 Menu
+      }
+      { Menu152 Menu
+        Text = Shortcut(("Import des clients"), "I")
+      }
+      { Menu170 Menu
+        Text = Shortcut(("Export des clients"), "E")
+      }
+      { Menu283 Menu
+        Text = Shortcut(("Export des contacts"), "x")
+      }
+      { Menu188 Menu
+      }
+      { Menu281 Menu
+        Text = Shortcut(("Export des articles"), "x")
+      }
+      { Menu280 Menu
+      }
+      { Menu279 Menu
+        Text = Shortcut(("RAZ stock"), "Z")
+      }
+      { Menu141 Menu
+      }
+      { Menu284 Menu
+        Text = ("Import des codes postaux")
+      }
+      { Menu285 Menu
+      }
+      { Menu282 Menu
+        Text = ("Appel programme")
+      }
+    }
+    { Menu146 Menu
+    }
+    { Menu175 Menu
+      Text = Shortcut(("E-mailing"), "m")
+    }
+    { Menu174 Menu
+    }
+    { Menu316 Menu
+      Text = ("SMS")
+    }
+    { Menu317 Menu
+    }
+    { Menu183 Menu
+      Text = Shortcut(("Boutique"), "B")
+      { Menu184 Menu
+        Text = Shortcut(("Saisie et envoi des produits"), "S")
+      }
+    }
+    { Menu185 Menu
+    }
+    { Menu147 Menu
+      Text = Shortcut(("Clôture mensuelle"), "l")
+      Picture = Picture["icon:/small/remove"]
+    }
+    { Menu148 Menu
+    }
+  }
+  { Menu203 Menu
+    Text = Shortcut(("Caisse"), "s")
+    Visible = False
+    { Menu211 Menu
+      Text = Shortcut(("Constantes"), "C")
+      { Menu205 Menu
+        Text = Shortcut(("Fiches caisses"), "F")
+      }
+      { Menu206 Menu
+        Text = ("Fiches vendeurs(ses)")
+      }
+      { Menu207 Menu
+        Text = Shortcut(("Libellé bas de ticket"), "b")
+      }
+      { Menu208 Menu
+        Text = Shortcut(("Libellé avoir"), "L")
+      }
+      { Menu209 Menu
+        Text = Shortcut(("Compte client caisse"), "C")
+      }
+    }
+    { Menu212 Menu
+    }
+    { Menu236 Menu
+      Text = Shortcut(("Carte de fidélité"), "r")
+      { Menu238 Menu
+        Text = Shortcut(("Table des cartes"), "T")
+      }
+      { Menu239 Menu
+        Text = Shortcut(("Hit parade des cartes"), "H")
+      }
+      { Menu240 Menu
+        Text = Shortcut(("Emailing"), "E")
+      }
+    }
+    { Menu237 Menu
+    }
+    { Menu213 Menu
+      Text = Shortcut(("Opérations de fin de journée"), "O")
+      { Menu214 Menu
+        Text = ("Impressions des bordereaux")
+      }
+      { Menu215 Menu
+        Text = Shortcut(("Moulinage des tickets"), "M")
+      }
+    }
+    { Menu216 Menu
+    }
+    { Menu217 Menu
+      Text = Shortcut(("Statistiques caisses"), "S")
+      { Menu204 Menu
+        Text = ("CA journalier")
+      }
+      { Menu218 Menu
+        Text = ("Historique tickets")
+      }
+    }
+    { Menu210 Menu
+    }
+    { Menu300 Menu
+      Text = Shortcut(("Synchronisation des caisses nomades"), "y")
+    }
+  }
+  { Menu67 Menu
+    Text = Shortcut(("Comptabilité"), "C")
+    Visible = False
+    { Menu11 Menu
+      Text = Shortcut(("Constantes"), "C")
+      { Menu111 Menu
+        Text = Shortcut(("Comptes Collectifs"), "o")
+      }
+      { Menu113 Menu
+        Text = Shortcut(("TVA sur achat"), "T")
+      }
+      { Menu114 Menu
+        Text = Shortcut(("Comptes"), "C")
+      }
+      { Menu115 Menu
+        Text = Shortcut(("Journaux"), "J")
+      }
+      { Menu24 Menu
+        Text = Shortcut(("Libellés des saisies"), "L")
+      }
+      { Menu131 Menu
+        Text = Shortcut(("Echéances"), "E")
+      }
+      { Menu198 Menu
+        Text = Shortcut(("Masques de saisies"), "M")
+      }
+      { Menu294 Menu
+        Text = Shortcut(("Postes analytiques"), "P")
+      }
+    }
+    { Menu48 Menu
+    }
+    { Menu2 Menu
+      Text = Shortcut(("Saisies"), "S")
+      { Menu21 Menu
+        Text = Shortcut(("Saisies des écritures"), "é")
+      }
+      { Menu22 Menu
+        Text = Shortcut(("Saisies de la trésorerie"), "t")
+      }
+    }
+    { Menu3 Menu
+    }
+    { Menu128 Menu
+      Text = Shortcut(("Traitement des écarts"), "T")
+    }
+    { Menu129 Menu
+    }
+    { Menu4 Menu
+      Text = Shortcut(("Relances"), "R")
+      { Menu27 Menu
+        Text = Shortcut(("Saisie des textes"), "S")
+      }
+      { Menu49 Menu
+        Text = Shortcut(("Préparation des relances"), "P")
+      }
+      { Menu50 Menu
+        Text = Shortcut(("Edition des relances"), "E")
+      }
+    }
+    { Menu29 Menu
+    }
+    { Menu5 Menu
+      Text = Shortcut(("Relevés"), "v")
+      { Menu52 Menu
+        Text = Shortcut(("De facture"), "f")
+      }
+      { Menu30 Menu
+        Text = Shortcut(("De compte"), "c")
+      }
+    }
+    { Menu304 Menu
+    }
+    { Menu303 Menu
+      Text = Shortcut(("Echéanciers"), "E")
+    }
+    { Menu34 Menu
+    }
+    { Menu6 Menu
+      Text = Shortcut(("Lettrage"), "L")
+      { Menu51 Menu
+        Text = Shortcut(("Lettrage manuel"), "m")
+      }
+      { Menu126 Menu
+        Text = Shortcut(("Lettrage par montant"), "p")
+      }
+      { Menu127 Menu
+        Text = Shortcut(("Lettrage des comptes soldés"), "c")
+      }
+    }
+    { Menu36 Menu
+    }
+    { Menu7 Menu
+      Text = Shortcut(("Rapp. bancaire"), "b")
+      { Menu61 Menu
+        Text = Shortcut(("Saisie des rapprochements"), "S")
+      }
+    }
+    { Menu45 Menu
+    }
+    { Menu8 Menu
+      Text = Shortcut(("Impressions"), "I")
+      { Menu38 Menu
+        Text = Shortcut(("Grands livres"), "G")
+      }
+      { Menu31 Menu
+        Text = Shortcut(("Balances"), "B")
+      }
+      { Menu32 Menu
+        Text = Shortcut(("Journaux"), "J")
+      }
+      { Menu109 Menu
+        Text = Shortcut(("Journaux centralisateurs"), "c")
+      }
+      { Menu291 Menu
+        Text = Shortcut(("Analytiques"), "A")
+        { Menu292 Menu
+          Text = Shortcut(("Journaux"), "J")
+        }
+        { Menu293 Menu
+          Text = Shortcut(("Comptes"), "C")
+        }
+      }
+      { Menu263 Menu
+        Text = Shortcut(("Récapitulatif TVA"), "R")
+      }
+      { Menu103 Menu
+        Text = Shortcut(("Ecritures non lettrées"), "l")
+      }
+      { Menu252 Menu
+        Text = Shortcut(("Ecritures non justifiées"), "u")
+      }
+      { Menu70 Menu
+        Text = Shortcut(("Plan comptable"), "P")
+      }
+    }
+    { Menu43 Menu
+    }
+    { Menu9 Menu
+      Text = Shortcut(("Extrait de compte"), "x")
+      { Menu16 Menu
+        Text = Shortcut(("Visualisation"), "V")
+      }
+      { Menu40 Menu
+        Text = Shortcut(("Recherche d'un montant"), "R")
+      }
+      { Menu1 Menu
+        Text = Shortcut(("Visu/modif des écritures"), "V")
+      }
+    }
+    { Menu41 Menu
+    }
+    { Menu119 Menu
+      Text = Shortcut(("Compte de résultat"), "m")
+      { Menu122 Menu
+        Text = Shortcut(("Gestion des rubriques"), "r")
+      }
+      { Menu123 Menu
+        Text = Shortcut(("Gestion des comptes"), "c")
+      }
+      { Menu124 Menu
+        Text = Shortcut(("Impression"), "I")
+      }
+      { Menu121 Menu
+      }
+    }
+    { Menu33 Menu
+      Text = Shortcut(("Clotures"), "s")
+      { Menu46 Menu
+        Text = Shortcut(("Clôture de période"), "p")
+      }
+      { Menu60 Menu
+        Text = Shortcut(("Clôture annuelle"), "a")
+      }
+    }
+    { Menu56 Menu
+    }
+    { Menu75 Menu
+      Text = Shortcut(("Outils"), "O")
+      { Menu76 Menu
+        Text = Shortcut(("Recalcul des soldes"), "R")
+      }
+      { Menu132 Menu
+        Text = Shortcut(("Vérification des balances"), "V")
+      }
+      { Menu262 Menu
+        Text = Shortcut(("Epuration des relevés bancaires"), "u")
+      }
+      { Menu311 Menu
+        Text = Shortcut(("Déblocage écritures"), "D")
+      }
+      { Menu135 Menu
+      }
+      { Menu133 Menu
+        Text = Shortcut(("Export des journaux"), "E")
+        Tag = "1"
+      }
+      { Menu298 Menu
+        Text = Shortcut(("Export fichier A47"), "x")
+      }
+      { Menu134 Menu
+        Text = Shortcut(("Import du JDV Laurux"), "I")
+        Tag = "2"
+      }
+      { Menu286 Menu
+        Text = Shortcut(("Import écritures Sage"), "s")
+      }
+      { Menu136 Menu
+      }
+      { Menu177 Menu
+        Text = Shortcut(("Import Ciel Expert"), "C")
+        { Menu179 Menu
+          Text = Shortcut(("Tables de correspondance"), "T")
+          { Menu180 Menu
+            Text = Shortcut(("Table des clients et fournisseurs"), "c")
+          }
+          { Menu181 Menu
+            Text = Shortcut(("Table des journaux"), "j")
+          }
+        }
+        { Menu182 Menu
+          Text = Shortcut(("Import des écritures"), "I")
+        }
+      }
+      { Menu178 Menu
+      }
+      { Menu150 Menu
+        Text = Shortcut(("Duplication de société"), "D")
+      }
+      { Menu151 Menu
+      }
+    }
+  }
+  { Menu55 Menu
+    Text = Shortcut(("Base"), "B")
+    Visible = False
+    { Menu57 Menu
+      Text = Shortcut(("Sauvegarde"), "S")
+    }
+    { Menu65 Menu
+      Text = Shortcut(("Restauration"), "R")
+    }
+    { Menu167 Menu
+    }
+    { Menu166 Menu
+      Text = Shortcut(("Connexion nouvelle base"), "n")
+    }
+    { Menu58 Menu
+    }
+    { Menu171 Menu
+      Text = Shortcut(("Envoi base"), "E")
+    }
+    { Menu172 Menu
+    }
+  }
+  { Menu200 Menu
+    Text = Shortcut(("Agenda"), "A")
+    Visible = False
+    { Menu202 Menu
+      Text = Shortcut(("Agenda"), "A")
+    }
+    { Menu201 Menu
+    }
+  }
+  { Menu10 Menu
+    Text = Shortcut(("?"), "?")
+    Visible = False
+    { Menu62 Menu
+    }
+    { Menu20 Menu
+      Text = Shortcut(("Concernant Laurux"), "C")
+      Picture = Picture["icon:/16/info"]
+    }
+    { Menu266 Menu
+      Text = Shortcut(("Information système"), "I")
+      Picture = Picture["icon:/32/computer"]
+    }
+    { Menu23 Menu
+      Text = Shortcut(("Aide Html"), "H")
+    }
+    { Menu125 Menu
+      Text = Shortcut(("Astuces"), "A")
+    }
+    { Menu63 Menu
+      Text = Shortcut(("Connexion site Laurux"), "o")
+      Picture = Picture["icon:/16/network"]
+    }
+    { Menu256 Menu
+      Text = Shortcut(("Mon IP"), "M")
+    }
+  }
+  { Menu64 Menu
+  }
+  { TabPanel1 TabPanel
+    MoveScaled(0,1,137,22)
+    Arrangement = Arrange.Vertical
+    Count = 2
+    Highlight = True
+    Index = 0
+    Text = ("Gestion")
+    { ToolBar1 ToolBar
+      MoveScaled(1,1,135,17)
+      Key = "general"
+      { MenuButton2 MenuButton
+        MoveScaled(0,0,13,6)
+        Action = "mnu-table"
+        AutoResize = True
+        Text = ("&Tables")
+        Arrow = False
+        Border = False
+        Menu = "mnutable"
+      }
+      { ToolButton1 ToolButton
+        MoveScaled(115,0,6,5)
+        Action = "leave"
+        Picture = Picture["2-porte.png"]
+      }
+      { ToolButton2 ToolButton
+        MoveScaled(21,2,11,8)
+        Action = "table-client"
+        Picture = Picture["preferences-contact-list.png"]
+      }
+      { MenuButton1 MenuButton
+        MoveScaled(6,5,13,6)
+        Action = "mnu-facturation"
+        AutoResize = True
+        Text = ("&Facturation")
+        Arrow = False
+        Border = False
+      }
+      { MenuButton3 MenuButton
+        MoveScaled(17,10,13,6)
+        Action = "mnu-constantes"
+        AutoResize = True
+        Text = ("&Constantes")
+        Arrow = False
+        Border = False
+      }
+    }
+    Index = 1
+    Text = ("Facturation")
+    Index = 0
+  }
+  { PictureBox1 PictureBox
+    MoveScaled(46,35,18,18)
+    Expand = True
+    Picture = Picture["Laurux -04.svg"]
+    Alignment = Align.Center
+  }
+}
+
+# Gambas Action File 3.0
+
+{ Actions
+  { Action leave
+    Text = ""
+    Picture = "2-porte.png"
+  }
+  { Action mnu-constantes
+    Text = "Constantes"
+    Picture = "$MenuButton"
+  }
+  { Action mnu-facturation
+    Text = "Facturation"
+    Picture = "$MenuButton"
+  }
+  { Action mnu-table
+    Text = "Tables"
+    Shortcut = ""
+    Picture = "$MenuButton"
+  }
+  { Action table-client
+    Text = ""
+    Picture = "preferences-contact-list.png"
+  }
+}
+
+{ Toolbars
+  { Toolbar general
+    Text = ""
+    List = "mnu-table,leave,table-client,mnu-facturation,mnu-constantes"
+    Default = "mnu-table,leave,table-client,mnu-facturation,mnu-constantes"
+  }
+}

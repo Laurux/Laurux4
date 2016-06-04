@@ -1,0 +1,680 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,114.2857,86)
+  Text = ("Editer Clients")
+  Resizable = False
+  Arrangement = Arrange.Vertical
+  { Panel19 Panel
+    MoveScaled(0,0,103,8)
+    Arrangement = Arrange.Horizontal
+    { btnNew Button
+      MoveScaled(0,0,8,8)
+      Picture = Picture["img/48/Save-icon.png"]
+      Border = False
+    }
+    { Separator4 Separator
+      MoveScaled(9,0,2,8)
+    }
+    { Panel45 Panel
+      MoveScaled(29,2,18,4)
+      Expand = True
+    }
+    { btnLeave Button
+      MoveScaled(88,0,8,8)
+      Picture = Picture["img/48/Log-Out-icon2.png"]
+      Border = False
+    }
+  }
+  { Panel44 Panel
+    MoveScaled(1,9,132,73)
+    Expand = True
+    Arrangement = Arrange.Fill
+    Border = Border.Plain
+    { IconPanel1 IconPanel
+      MoveScaled(0,-1,131,72)
+      Expand = True
+      Arrangement = Arrange.Vertical
+      Spacing = True
+      Margin = True
+      Padding = 5
+      Count = 5
+      Index = 0
+      Text = ("Identite")
+      Picture = Picture["preferences-contact-list-32.png"]
+      { Panel21 Panel
+        MoveScaled(2,0,98,12)
+        Arrangement = Arrange.Horizontal
+        Spacing = True
+        Padding = 15
+        { Panel20 Panel
+          MoveScaled(0,1,87,9)
+          Expand = True
+          Arrangement = Arrange.Vertical
+          Spacing = True
+          Padding = 5
+          { Panel2 HBox
+            MoveScaled(0,0,31,4)
+            { lblNom7 Label
+              MoveScaled(0,0,8,3)
+              Text = ("Code")
+            }
+            { lblCode Label
+              MoveScaled(13,0,17,3)
+              Font = Font["Bold"]
+              Background = Color.Gray
+              Foreground = &HFFFFFF&
+              Border = Border.Plain
+            }
+          }
+          { Panel3 HBox
+            MoveScaled(0,4,86,4)
+            { lblNom Label
+              MoveScaled(0,0,8,3)
+              Text = ("Nom")
+            }
+            { txtNom TextBox
+              MoveScaled(13,0,23,3)
+            }
+            { Panel1 Panel
+              MoveScaled(39,0,2,3)
+              Expand = True
+            }
+            { lblNom2 Label
+              MoveScaled(43,0,9,3)
+              Text = ("Prenom")
+            }
+            { txtPrenom TextBox
+              MoveScaled(52,0,33,3)
+            }
+          }
+        }
+        { Panel23 Panel
+          MoveScaled(74,1,11,11)
+          Arrangement = Arrange.Vertical
+          Border = Border.Plain
+          { PictureBox2 PictureBox Status
+            Name = "PictureBox2"
+            MoveScaled(0,0,9,9)
+            Picture = Picture["img/64/connected-64.png"]
+            Alignment = Align.Center
+          }
+          { Label11 Label Status
+            Name = "Label11"
+            MoveScaled(1,9,9,2)
+            Font = Font["-2"]
+            Text = ("Actif")
+            Alignment = Align.Center
+          }
+        }
+      }
+      { Separator1 Separator
+        MoveScaled(2,11,89,2)
+      }
+      { Panel4 HBox
+        MoveScaled(2,13,87,4)
+        { lblNom3 Label
+          MoveScaled(0,0,15,3)
+          Text = ("Adresse 1")
+        }
+        { txtAdr1 TextBox
+          MoveScaled(13,0,73,3)
+          Expand = True
+        }
+      }
+      { Panel5 HBox
+        MoveScaled(2,17,87,4)
+        { lblNom4 Label
+          MoveScaled(0,0,15,3)
+          Text = ("Adresse 2")
+        }
+        { txtAdr2 TextBox
+          MoveScaled(13,0,73,3)
+          Expand = True
+        }
+      }
+      { Panel9 HBox
+        MoveScaled(2,22,88,46)
+        Spacing = True
+        Padding = 5
+        { Panel26 VBox
+          MoveScaled(0,1,44,44)
+          Expand = True
+          { Panel10 VBox
+            MoveScaled(0,0,38,21)
+            Expand = True
+            Spacing = True
+            Padding = 3
+            { Panel7 HBox
+              MoveScaled(0,0,43,4)
+              { lblNom5 Label
+                MoveScaled(0,0,15,3)
+                Text = ("Code Postal")
+              }
+              { txtcp TextBox
+                MoveScaled(13,0,25,3)
+              }
+            }
+            { Panel6 HBox
+              MoveScaled(0,5,43,4)
+              { lblNom6 Label
+                MoveScaled(0,0,15,3)
+                Text = ("Ville")
+              }
+              { txtVille TextBox
+                MoveScaled(8,0,34,3)
+                Expand = True
+              }
+            }
+            { Panel8 HBox
+              MoveScaled(0,9,38,4)
+              { Label2 Label
+                MoveScaled(0,0,15,3)
+                Text = ("Pays")
+              }
+              { cmbPays ComboBox
+                MoveScaled(13,0,25,3)
+              }
+            }
+          }
+          { Panel24 Panel
+            MoveScaled(0,23,38,17)
+            Arrangement = Arrange.Vertical
+            Spacing = True
+            Padding = 3
+            Border = Border.Raised
+            { Panel22 HBox
+              MoveScaled(0,0,38,4)
+              { Label10 Label
+                MoveScaled(0,0,15,3)
+                Text = ("TVA Intracom")
+              }
+              { txtTva TextBox
+                MoveScaled(16,0,21,4)
+                Expand = True
+              }
+            }
+            { Panel25 HBox
+              MoveScaled(0,5,38,4)
+              { Label12 Label
+                MoveScaled(0,1,15,3)
+                Text = ("Collectif")
+              }
+              { DBCbCollectif DBCombo2
+                MoveScaled(13,0,22,4)
+                Columns = ["compte_cc", "intitule_cc"]
+                Labels = ["Code", "Intitulé"]
+                ShowFilters = False
+                Table = "SELECT * FROM Fiches_Comptes where coll =1 and left(compte_cc,2) = 41 order by cast(compte_cc AS char)"
+                ValueField = "compte_cc"
+              }
+            }
+            { chkDivers CheckBox
+              MoveScaled(1,11,36,3)
+              Text = ("Client divers")
+            }
+          }
+        }
+        { Panel18 Panel
+          MoveScaled(43,1,2,35)
+        }
+        { VBox1 Panel
+          MoveScaled(39,2,36,43)
+          Expand = True
+          Arrangement = Arrange.Vertical
+          AutoResize = True
+          Spacing = True
+          Margin = True
+          Padding = 3
+          Border = Border.Raised
+          { TextLabel1 TextLabel
+            MoveScaled(9,0,34,3)
+            Text = ("Cont@cts")
+            Alignment = Align.Center
+          }
+          { Panel17 HBox
+            MoveScaled(5,3,40,4)
+            { Label9 Label
+              MoveScaled(0,0,10,3)
+              Text = ("Courriel")
+            }
+            { txtCourriel TextBox
+              MoveScaled(16,0,22,3)
+              Expand = True
+            }
+          }
+          { Separator3 Separator
+            MoveScaled(8,7,41,1)
+          }
+          { TextLabel2 TextLabel
+            MoveScaled(8,8,34,3)
+            Text = ("Téléphones")
+            Alignment = Align.Center
+          }
+          { Panel12 HBox
+            MoveScaled(5,12,39,4)
+            { Label4 Label
+              MoveScaled(0,0,10,3)
+              Text = ("Domicile")
+            }
+            { txtTelDomicile TextBox
+              MoveScaled(16,0,22,3)
+              Expand = True
+            }
+          }
+          { Panel11 HBox
+            MoveScaled(5,16,39,4)
+            { Label3 Label
+              MoveScaled(0,0,10,3)
+              Text = ("Bureau")
+            }
+            { txtTelBureau TextBox
+              MoveScaled(16,0,22,3)
+              Expand = True
+            }
+          }
+          { Panel13 HBox
+            MoveScaled(5,20,39,4)
+            { Label5 Label
+              MoveScaled(0,0,10,3)
+              Text = ("Poste")
+            }
+            { txtTelPoste TextBox
+              MoveScaled(16,0,22,3)
+              Expand = True
+            }
+          }
+          { Panel14 HBox
+            MoveScaled(5,25,39,4)
+            { Label6 Label
+              MoveScaled(0,0,10,3)
+              Text = ("Portable")
+            }
+            { txtTelPortable TextBox
+              MoveScaled(16,0,22,3)
+              Expand = True
+            }
+          }
+          { Separator2 Separator
+            MoveScaled(5,30,41,1)
+          }
+          { Panel15 HBox
+            MoveScaled(5,32,39,4)
+            { Label7 Label
+              MoveScaled(0,0,10,3)
+              Text = ("Fax 1")
+            }
+            { txtFax1 TextBox
+              MoveScaled(16,0,22,3)
+              Expand = True
+            }
+          }
+          { Panel16 HBox
+            MoveScaled(5,36,39,4)
+            { Label8 Label
+              MoveScaled(0,0,10,3)
+              Text = ("Fax 2")
+            }
+            { txtFax2 TextBox
+              MoveScaled(16,0,22,3)
+              Expand = True
+            }
+          }
+        }
+      }
+      Index = 1
+      Text = ("Informations")
+      Picture = Picture["img/32/info.png"]
+      { Panel43 Panel
+        MoveScaled(3,1,84,24)
+        Arrangement = Arrange.Vertical
+        Border = Border.Raised
+        { Label20 Label
+          MoveScaled(0,0,81,4)
+          Font = Font["Bold,+1"]
+          Text = ("Observations")
+          Alignment = Align.Center
+        }
+        { TextArea1 TextArea
+          MoveScaled(0,4,83,19)
+          Expand = True
+        }
+      }
+      Index = 2
+      Text = ("Comptabilité")
+      Picture = Picture["img/32/books.png"]
+      { Frame4 Panel
+        MoveScaled(1,1,114.2857,22)
+        Arrangement = Arrange.Vertical
+        AutoResize = True
+        Border = Border.Raised
+        { Label14 Label
+          MoveScaled(29,1,58,4)
+          Font = Font["Bold,+1"]
+          Text = ("Relevé d'identité bancaire")
+          Alignment = Align.Top
+        }
+        { Panel32 HBox
+          MoveScaled(0,5,114.2857,8)
+          AutoResize = True
+          Spacing = True
+          Padding = 3
+          { Panel27 VBox
+            MoveScaled(0,0,17,7)
+            { Label1 Label
+              MoveScaled(1,0,16,2)
+              Text = ("Code banque")
+              Alignment = Align.Center
+            }
+            { Codebanque TextBox Cmpt2
+              Name = "Codebanque"
+              MoveScaled(0,3,17,4)
+              Background = Color.TextBackground
+              Tag = "1"
+              MaxLength = 5
+            }
+          }
+          { Panel28 VBox
+            MoveScaled(20,0,17,7)
+            { Label13 Label
+              MoveScaled(0,0,16,2)
+              Text = ("Code guichet")
+              Alignment = Align.Center
+            }
+            { Codeguichet TextBox Cmpt2
+              Name = "Codeguichet"
+              MoveScaled(0,3,17,4)
+              Background = Color.TextBackground
+              Tag = "2"
+              MaxLength = 5
+            }
+          }
+          { Panel29 VBox
+            MoveScaled(40,0,18,7)
+            { Dateproch Label
+              MoveScaled(0,0,19,2)
+              Text = ("Numero de compte")
+              Alignment = Align.Center
+            }
+            { Numcompte TextBox Cmpt2
+              Name = "Numcompte"
+              MoveScaled(0,3,17,4)
+              Background = Color.TextBackground
+              Tag = "3"
+              MaxLength = 11
+            }
+          }
+          { Panel30 VBox
+            MoveScaled(60,0,5,7)
+            { Datederrel Label
+              MoveScaled(0,0,4,2)
+              Text = ("Cle")
+              Alignment = Align.Center
+            }
+            { Cle TextBox Cmpt2
+              Name = "Cle"
+              MoveScaled(0,3,4,4)
+              Background = Color.TextBackground
+              Tag = "4"
+              MaxLength = 2
+            }
+          }
+          { Panel31 VBox
+            MoveScaled(68,0,15,7)
+            { Qual Label
+              MoveScaled(0,0,14,2)
+              Text = ("Domiciliation")
+              Alignment = Align.Center
+            }
+            { Dom TextBox Cmpt2
+              Name = "Dom"
+              MoveScaled(0,3,14,4)
+              Background = Color.TextBackground
+              Tag = "5"
+              MaxLength = 25
+            }
+          }
+          { Panel33 VBox
+            MoveScaled(84,0,7,7)
+            { Label15 Label
+              MoveScaled(0,0,7,2)
+              Text = ("CdeEnt")
+              Alignment = Align.Center
+            }
+            { Cent TextBox Cmpt2
+              Name = "Cent"
+              MoveScaled(1,2,4,4)
+              Background = Color.TextBackground
+              Tag = "6"
+              Alignment = Align.Center
+              MaxLength = 1
+            }
+          }
+          { Panel39 VBox
+            MoveScaled(93,0,7,7)
+            { Label16 Label
+              MoveScaled(0,0,8,2)
+              Text = ("CdeAcc")
+              Alignment = Align.Center
+            }
+            { Cacc TextBox Cmpt2
+              Name = "Cacc"
+              MoveScaled(3,2,4,4)
+              Background = Color.TextBackground
+              Tag = "7"
+              Alignment = Align.Center
+              MaxLength = 1
+            }
+          }
+        }
+        { Panel38 HBox
+          MoveScaled(0,13,95,8)
+          { Panel34 VBox
+            MoveScaled(0,0,11,7)
+            { Label17 Label
+              MoveScaled(0,0,16,3)
+              Text = ("Ref du tiré")
+              Alignment = Align.Left
+            }
+            { Tire TextBox Cmpt2
+              Name = "Tire"
+              MoveScaled(0,3,10,4)
+              Background = Color.TextBackground
+              Tag = "8"
+              Alignment = Align.Center
+              MaxLength = 10
+            }
+          }
+          { Panel35 VBox
+            MoveScaled(18,0,37,7)
+            { Label29 Label
+              MoveScaled(0,0,35,3)
+              Text = ("IBAN")
+              Alignment = Align.Center
+            }
+            { Iban TextBox Cmpt2
+              Name = "Iban"
+              MoveScaled(0,3,37,4)
+              Background = Color.TextBackground
+              Tag = "9"
+              MaxLength = 30
+            }
+          }
+          { Panel36 VBox
+            MoveScaled(52,0,12,7)
+            { Label28 Label
+              MoveScaled(0,0,12,3)
+              Text = ("BIC")
+              Alignment = Align.Center
+            }
+            { Bic TextBox Cmpt2
+              Name = "Bic"
+              MoveScaled(0,3,12,4)
+              Background = Color.TextBackground
+              Tag = "10"
+              MaxLength = 11
+            }
+          }
+          { Panel37 VBox
+            MoveScaled(66,0,27,7)
+            { Label46 Label
+              MoveScaled(0,0,27,3)
+              Text = ("RUM")
+              Alignment = Align.Center
+            }
+            { Rum TextBox Cmpt2
+              Name = "Rum"
+              MoveScaled(1,3,25,4)
+              Background = Color.TextBackground
+              Tag = "15"
+              ToolTip = ("F9 pour générer un RUM")
+              MaxLength = 30
+            }
+          }
+        }
+      }
+      { Frame3 Panel
+        MoveScaled(0,24,108,28)
+        Expand = True
+        { Label18 Label
+          MoveScaled(1,1,15,4)
+          Text = ("Plafond encours")
+        }
+        { Encours TextBox Cmpt2
+          Name = "Encours"
+          MoveScaled(22,1,17,4)
+          Background = Color.TextBackground
+          Tag = "11"
+          MaxLength = 10
+        }
+        { Label26 Label
+          MoveScaled(1,6,20,4)
+          Text = ("Exemplaires factures")
+        }
+        { Nbexpl ComboBox
+          MoveScaled(22,6,8,4)
+          Background = Color.TextBackground
+          List = [(""), ("1"), ("2"), ("3"), ("4"), ("5"), ("6"), ("7"), ("8"), ("9")]
+        }
+        { Label44 Label
+          MoveScaled(1,12,18,4)
+          Text = ("Mode de réglement")
+        }
+        { Mreg ComboBox
+          MoveScaled(22,12,16,4)
+          Background = Color.TextBackground
+          List = [(""), ("Chèque"), ("Espèces"), ("Carte"), ("Paypal"), ("Virement"), ("Traite"), ("Prélèvement"), ("Lcr")]
+        }
+        { Label25 Label
+          MoveScaled(1,17,10,4)
+          Text = ("Echéance")
+          Alignment = Align.Left
+        }
+        { dbcEcheance DBCombo2
+          MoveScaled(22,17,11,4)
+          Header = True
+          Columns = ["num", "libell"]
+          Labels = ["Code", "Intitulé"]
+          ShowFilters = False
+          Table = "\"SELECT * FROM Fiches_Echeances order by num\""
+        }
+        { Label47 Label
+          MoveScaled(1,22,18,4)
+          Text = ("Commercial")
+        }
+        { Comm ComboBox
+          MoveScaled(22,22,28,4)
+          Background = Color.TextBackground
+        }
+        { Relfacture CheckBox
+          MoveScaled(53,1,21,4)
+          Text = ("Relevé de factures")
+        }
+        { Relcompte CheckBox
+          MoveScaled(53,5,20,4)
+          Text = ("Relevé de compte")
+        }
+        { Exo CheckBox
+          MoveScaled(53,9,11,4)
+          Text = ("Exo")
+        }
+        { Livraison CheckBox
+          MoveScaled(53,13,16,4)
+          ToolTip = ("A cocher si la marchandise est livrée chez le client")
+          Text = ("A livrer")
+        }
+      }
+      { Frame6 Panel
+        MoveScaled(0,54,90,19)
+        Arrangement = Arrange.Vertical
+        Border = Border.Raised
+        { Label19 Label
+          MoveScaled(18,1,58,4)
+          Font = Font["Bold,+1"]
+          Text = ("Remises")
+          Alignment = Align.Top
+        }
+        { Panel40 Panel
+          MoveScaled(2,4,84,4)
+          Arrangement = Arrange.Horizontal
+          { Label23 Label
+            MoveScaled(0,1,8,4)
+            Text = ("Sur MO")
+          }
+          { Remmo TextBox Cmpt2
+            Name = "Remmo"
+            MoveScaled(10,1,9,4)
+            Background = Color.TextBackground
+            Tag = "13"
+            MaxLength = 5
+          }
+          { Panel41 Panel
+            MoveScaled(19,0,5,5)
+            Expand = True
+          }
+          { Label24 Label
+            MoveScaled(25,1,11,4)
+            Text = ("Sur Pieces")
+          }
+          { Remart TextBox Cmpt2
+            Name = "Remart"
+            MoveScaled(36,1,9,4)
+            Background = Color.TextBackground
+            Tag = "14"
+            MaxLength = 5
+          }
+          { Panel42 Panel
+            MoveScaled(46,1,3,3)
+            Expand = True
+          }
+          { TextLabel3 TextLabel
+            MoveScaled(49,0,12,4)
+            Text = ("Type client")
+            Alignment = Align.Center
+          }
+          { dbcTypecli DBCombo2
+            MoveScaled(63,0,20,4)
+            Header = True
+            Columns = ["code", "libelle"]
+            Labels = ["Code", "Intitulé"]
+            ShowFilters = False
+            Table = "SELECT * FROM Fiches_Typec order by code"
+            ValueField = "code"
+          }
+        }
+        { Tarif CheckBox
+          MoveScaled(2,10,19,3)
+          Visible = False
+          Text = ("Client tarif")
+        }
+      }
+      Index = 3
+      Text = ("Documents")
+      Picture = Picture["img/32/Documents.png"]
+      Index = 4
+      Text = ("Abonnements")
+      Picture = Picture["img/32/virtualreg-manager_icon_95831.png"]
+      Index = 0
+    }
+  }
+}

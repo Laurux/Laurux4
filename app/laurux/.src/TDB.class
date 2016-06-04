@@ -1,0 +1,19 @@
+' Gambas class file
+
+Public FieldName As String
+Public Label As String
+Public Type As String
+Public Value As Variant
+
+Static Public Sub _Call(sFieldName As String, sLabel As String, sType As String, vValue As Variant) As TDB
+
+  Dim hTDB As New TDB
+    With hTDB
+      .FieldName = sFieldName
+      .Label = sLabel
+      .Type = sType
+      .Value = vValue
+    End With
+  Return hTDB
+  
+End

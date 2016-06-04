@@ -1,0 +1,10 @@
+[Connection]
+Type="mysql"
+User="root"
+RememberPassword=True
+IgnoreCharset=False
+DisplayMetadata=False
+RememberTemplate=False
+Database="Laurux01"
+Requests=["SELECT * FROM centralisation WHERE numrub LIKE '%B%'"]
+
